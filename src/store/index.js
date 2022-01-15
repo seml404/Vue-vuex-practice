@@ -22,6 +22,13 @@ const store = createStore({
       state.counter += payload.value;
     },
   },
+  actions: {
+    incrementAsync(ctx) {
+      setTimeout(() => {
+        ctx.commit("increment");
+      }, 2000);
+    },
+  },
 });
 
 export default store;
